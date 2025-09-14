@@ -1,0 +1,64 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Bulbizarre",
+      "price": 100.0,
+      "quantity": 1
+    },
+    {
+      "id": 2,
+      "name": "Herbizarre",
+      "price": 1500.0,
+      "quantity": 1
+    },
+    {
+      "id": 3,
+      "name": "Florizarre",
+      "price": 3000.0,
+      "quantity": 1
+    },
+    {
+      "id": 4,
+      "name": "Salameche",
+      "price": 100.0,
+      "quantity": 1
+    },
+    {
+      "id": 5,
+      "name": "Reptincelle",
+      "price": 1500.0,
+      "quantity": 1
+    },
+    {
+      "id": 6,
+      "name": "Dracaufeu",
+      "price": 3000.0,
+      "quantity": 1
+    },
+    {
+      "id": 7,
+      "name": "Carapuce",
+      "price": 100.0,
+      "quantity": 1
+    },
+    {
+      "id": 8,
+      "name": "Carabaffe",
+      "price": 1500.0,
+      "quantity": 1
+    },
+    {
+      "id": 9,
+      "name": "Tortank",
+      "price": 3000.0,
+      "quantity": 1
+    },
+    {
+      "id": 10,
+      "name": "Chenipan",
+      "price": 100.0,
+      "quantity": 1
+    }
+  ]
+}

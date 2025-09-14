@@ -1,0 +1,10 @@
+{
+  "name": "My Svelte Courses",
+  "description": "Cours Svelte avec démonstrations des runes",
+  "framework": "svelte",
+  "version": "5.0",
+  "devtools": {
+    "source_maps": true,
+    "hot_reload": true
+  }
+}
