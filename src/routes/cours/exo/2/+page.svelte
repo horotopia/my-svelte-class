@@ -1,1 +1,1 @@
-<h2><strong>Exercice 02 :</strong> formulaire avec binding bidirectionnel.</h2>
+<h2><strong>Exercice 02 :</strong> Gestion de Panier</h2>

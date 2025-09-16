@@ -1,16 +1,13 @@
-<script>
-  import ProductList from './lib/components/ProductList.svelte';
-  import Cart from './lib/components/Cart.svelte';
-  import productsData from './lib/constants/products.json';
-
-  let products = productsData.products;
+<script lang="ts">
 
 </script>
 
-<h2><strong>Demo 02:</strong>Posts Instagram</h2>
-<br />
-<ul>
-  <li>Props (import, export)</li>
-  <li>Composants (parent, enfant)</li>
-  <li>Stores (subscribe, update, set)</li>
-</ul>
+<section class="flex flex-col items-center justify-around w-96 m-auto max-w-sm rounded p-8 shadow-md">
+  <h2 class="mb-4 text-2xl font-bold">Posts Instagram</h2>
+
+  <ul>
+    <li>Props (import, export)</li>
+    <li>Composants (parent, enfant)</li>
+    <li>Stores (subscribe, update, set)</li>
+  </ul>
+</section>

@@ -2,8 +2,6 @@
 
 </script>
 
-
-<h2><strong>Demo 03 :</strong>Stories Instagram</h2>
-<br />
-<ul>
-</ul> 
+<section class="flex flex-col items-center justify-around w-96 m-auto max-w-sm rounded p-8 shadow-md">
+  <h2 class="mb-4 text-2xl font-bold">Stories Instagram</h2>
+</section>

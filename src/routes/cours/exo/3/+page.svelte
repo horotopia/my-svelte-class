@@ -1,1 +1,1 @@
-<h2><strong>Exercice 03 :</strong> composant parent/enfant avec props et événements.</h2>
+<h2><strong>Exercice 03 :</strong> Site de recettes</h2>
