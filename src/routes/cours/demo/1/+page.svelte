@@ -1,7 +1,9 @@
-<script lang="ts">
-
+<script>
+	let isConnected = false
 </script>
 
-<section class="flex flex-col items-center justify-around w-96 m-auto max-w-sm rounded p-8 shadow-md">
-		<h2 class="mb-4 text-2xl font-bold">Connexion</h2>
-</section>
+<button 
+	class="border p-2 rounded-xl cursor-pointer"
+	on:click={() => isConnected = !isConnected}
+>Connection</button>
+<p>{isConnected ? 'Vous êtes connecté' : 'Vous n\'êtes pas connecté' }</p>
