@@ -50,9 +50,6 @@
 <section class="flex flex-col items-center justify-around w-96 m-auto max-w-sm rounded p-8 shadow-md">
 		<h2 class="mb-4 text-2xl font-bold">Connexion</h2>
     <p class="mb-4">Bon retour parmi nous !</p>
-		{#if errorMessage}
-			<p class="error">{errorMessage}</p>
-		{/if}
 
     <div class="relative mb-2 mt-8">
       <input type="text" id="username" bind:value={username} class="block px-2.5 pb-2.5 pt-4 w-80 text-base text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />

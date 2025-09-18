@@ -1,4 +1,4 @@
-import { writable } from "svelte/store";
+import { writable, subcribe, update, set } from "svelte/store";
 import { localStore } from "./localStore.js";
 
 export const storiesPos = writable({});
