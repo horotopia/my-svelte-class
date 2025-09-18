@@ -1,5 +1,8 @@
 # Démo 02 - Gestion de Panier
 
+## Enoncé de l'exercice
+  Faites une application Svelte qui affiche une liste de produits et permet aux utilisateurs d'ajouter des produits à un panier. Utilisez des composants, des props et un store pour gérer l'état du panier.
+
 ## Objectif
   - Utiliser des composants pour afficher les produits et le panier.
   - Utiliser des props pour passer des données entre les composants.
