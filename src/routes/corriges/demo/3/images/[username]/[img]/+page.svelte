@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
 	import { page } from '$app/stores';
-	import { spring } from 'svelte/motion';
 
 	import { storyViews } from '../../../lib/store';
 	import type { IImage, IUser } from '../../../lib/server/models';
@@ -31,13 +30,6 @@
 	let imageWidth = 0;
 
 	let lastTime = 0;
-	let yDragStartPos = 0,
-		xDragStartPos = 0;
-	const initialScale = 1;
-	let yDragPos = 0,
-		xDragPos = 0;
-	const scaleTween = spring(initialScale);
-	let panTween = spring(0);
 
 	// disable for debugging
 	let autoPlay: boolean = true;
@@ -146,34 +138,6 @@
 		else if (e.key === 'Escape') window.location.href = rootPath;
 	}
 
-	function handleDragStart(e: TouchEvent) {
-		const t = e.changedTouches[0];
-		yDragStartPos = t.pageY;
-		xDragStartPos = t.pageX;
-		lastTime = window.performance.now();
-	}
-
-	function handleDrag(e: TouchEvent) {
-		const t = e.changedTouches[0];
-		yDragPos = t.pageY - yDragStartPos;
-		xDragPos = t.pageX - xDragStartPos;
-		if (yDragPos > 10 && $panTween === 0)
-			scaleTween.set(Math.min(initialScale, 1 - yDragPos / 600), { hard: true });
-		if (Math.abs(xDragPos) > 10 && $scaleTween === initialScale)
-			panTween.set(xDragPos, { hard: true });
-	}
-
-	function handleDragEnd(e: TouchEvent) {
-		e.preventDefault();
-		const touch = e.changedTouches[0];
-		if ($scaleTween === initialScale && !$panTween) handlePointerUp(touch);
-		if ($panTween >= 100) gotoPreviousStory();
-		else if ($panTween <= -100) gotoNextStory();
-		else if ($scaleTween <= 0.8) window.location.href = rootPath;
-		$scaleTween = initialScale;
-		$panTween = 0;
-	}
-
 	function startAutoPlay() {
 		stopAutoPlay();
 		if (autoPlay) {
@@ -252,12 +216,8 @@
 		class="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-white"
 		on:mousedown={handleMouseDown}
 		on:mouseup={handleMouseUp}
-		on:touchstart|passive={handleDragStart}
-		on:touchmove|passive={handleDrag}
-		on:touchend={handleDragEnd}
 		aria-label="Image story"
 		aria-hidden="true"
-		style="transform: translateX({$panTween}px); opacity: {$scaleTween};"
 	>
 			<div class="absolute right-4 top-4 z-20">
 				<button class="p-4 font-bold text-gray-900" aria-label="Close story" on:click={() => window.location.href = rootPath}>✕</button>
@@ -345,7 +305,6 @@
 					alt={images?.[imgIndex]?.alt || ''}
 					bind:this={imageElement}
 					class="mask-t-from-90% mask-t-to-110% relative z-10 mx-auto h-full max-h-[80vh] w-auto scale-100 rounded-xl object-contain shadow-2xl transition-transform duration-500"
-					style="transform: scale({$scaleTween}); max-width: 900px;"
 				/>
 			{/key}
 			{#if (nextUser?.images?.length ?? 0) > 0}
