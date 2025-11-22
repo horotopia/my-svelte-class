@@ -1,4 +1,5 @@
 import { writable } from "svelte/store";
+import { browser } from "$app/environment";
 
 /**
  * @param {string} key
@@ -11,7 +12,7 @@ export const localStore = (key, initial) => {
     const hasLocalStorage = typeof localStorage !== 'undefined';
 
     let saved = initial;
-    if (hasLocalStorage) {
+    if (hasLocalStorage && browser) {
         const raw = localStorage.getItem(key);
         if (raw === null) {
             localStorage.setItem(key, toString(initial));
